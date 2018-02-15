@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Friend component renders with a persons first and last name 1`] = `
+<div>
+  Jon
+   
+  Snow
+</div>
+`;
