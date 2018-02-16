@@ -3,7 +3,7 @@ import renderer from "react-test-renderer"; // since we aren't mounting to the D
 import { Friend } from "./friend"; // import the component to test
 
 test("Friend component renders with a persons first and last name", () => {
-  const component = renderer.create(<Friend first={"Jon"} last={"Snow"} />);
+  const component = renderer.create(<Friend firstName={"Jon"} last={"Snow"} />);
   const tree = component.toJSON();
   expect(tree).toMatchSnapshot();
 });

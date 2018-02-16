@@ -1,7 +1,8 @@
 import React from "react";
 
-export const Friend = ({ first, last }) => (
+export const Friend = ({ firstName, last }) => (
   <div>
-    {first} {last}
+    <div>{firstName}</div>
+    <div>{last}</div>
   </div>
 );

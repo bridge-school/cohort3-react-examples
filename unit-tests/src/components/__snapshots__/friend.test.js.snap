@@ -2,8 +2,11 @@
 
 exports[`Friend component renders with a persons first and last name 1`] = `
 <div>
-  Jon
-   
-  Snow
+  <div>
+    Jon
+  </div>
+  <div>
+    Snow
+  </div>
 </div>
 `;
