@@ -8,36 +8,26 @@ class App extends Component {
   constructor() {
     super();
 
-    this.state = friends.reduce((acc, curr) => {
-      return { ...acc, [curr.id]: false };
-    }, {});
+    this.state = {
+      username: "",
+      email: ""
+    };
   }
 
-  toggleChild = id => {
-    this.setState({ [id]: !this.state[id] });
-  };
+  componentWillMount() {
+    this.myTimer = setInterval(() => {
+      console.log("Test");
+    }, 1000);
+  }
 
-  toggleAll = () => {
-    Object.keys(this.state).map(this.toggleChild);
-  };
-
+  componentWillUnmount() {
+    console.log("Im unmounting :(");
+    clearInterval(this.myTimer);
+  }
   render() {
-    return (
-      <div>
-        <button onClick={this.toggleAll}> Toggle All </button>
-        <ul>
-          {friends.map(friend => (
-            <li>
-              <FriendCard
-                showDetails={this.state[friend.id]}
-                toggle={this.toggleChild}
-                {...friend}
-              />
-            </li>
-          ))}
-        </ul>
-      </div>
-    );
+    console.log("Render!");
+    const { username, email } = this.state;
+    return <div>{`${username} ${email}`}</div>;
   }
 }
 
